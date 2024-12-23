@@ -1,0 +1,147 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+@include mat.core();
+
+$my-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: mat.$violet-palette,
+    ),
+    typography: (
+      plain-family: "iransans",
+      brand-family: "iransans",
+    ),
+  )
+);
+
+$button-theme: mat.define-theme(
+  (
+    color: (
+      primary: mat.$green-palette,
+      tertiary: mat.$blue-palette,
+    ),
+  )
+);
+
+:root {
+  @include mat.all-component-typographies($my-theme);
+}
+
+html {
+  @include mat.button-theme($button-theme);
+}
+
+.mdc-floating-label--required:not(
+    .mdc-floating-label--hide-required-marker
+  )::after {
+  margin-left: 5px !important;
+}
+
+.mat-mdc-form-field .mdc-notched-outline__notch {
+  clip-path: inset(-9em -999em -9em -5px) !important;
+}
+
+.mat-drawer-container {
+  position: absolute !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.mat-success {
+  background-color: #017a01 !important;
+  color: #fff !important;
+}
+
+.mat-white {
+  background-color: #ffffff !important;
+  color: #292929 !important;
+}
+
+.mat-error {
+  background-color: #d21212 !important;
+  color: #ffffff !important;
+}
+
+.mat-info {
+  background-color: #2566fc !important;
+  color: #ffffff !important;
+}
+
+.snack-bar-warn-message {
+  background-color: transparent;
+  color: #fff !important;
+  .mdc-button__label {
+    color: #fff !important;
+  }
+}
+
+.warn-message {
+  .mdc-snackbar__surface {
+    --mdc-snackbar-container-color: #ff932e !important;
+    .mat-mdc-snack-bar-actions {
+      .mdc-button__label {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.success-message {
+  .mdc-snackbar__surface {
+    --mdc-snackbar-container-color: #009200 !important;
+    .mat-mdc-snack-bar-actions {
+      .mdc-button__label {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.mat-mdc-row {
+  cursor: pointer;
+}
+
+.warning-icon {
+  color: #ee840b !important;
+  cursor: pointer;
+}
+
+.danger-icon {
+  color: #c61212 !important;
+  cursor: pointer;
+}
+
+.actions-section {
+  display: block;
+  position: relative !important;
+  z-index: 99 !important;
+  width: max-content;
+}
+
+.mdc-data-table__content {
+  tr {
+    position: relative !important;
+    z-index: 9 !important;
+  }
+}
+
+.mat-mdc-dialog-surface {
+  overflow: hidden;
+}
+
+.mat-mdc-paginator-container{
+  flex-wrap: nowrap !important;
+  overflow: hidden !important;
+  justify-content: flex-start !important;
+}
+
+.mat-mdc-paginator-page-size-label{
+  width: max-content;
+}
+
+.mat-mdc-paginator-range-label{
+  width: max-content;
+}

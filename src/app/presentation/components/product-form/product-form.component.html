@@ -1,0 +1,42 @@
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <div class="form-inner" [dir]="'rtl'">
+    <div class="col-md-6 col-xs-12 mb-4">
+      <mat-form-field appearance="outline" class="w-full" dir="rtl">
+        <mat-label>قیمت</mat-label>
+        <input matInput formControlName="price" type="number" required />
+        @if(productForm.invalid &&
+        (productForm.controls['price'].errors?.['required'] &&
+        (productForm.controls['price'].dirty || showPriceError ||
+        productForm.controls['price'].touched))){
+        <mat-hint class="text-red-500">قیمت را وارد کنید</mat-hint>
+        } @if(productForm.invalid &&
+        (productForm.controls['price'].errors?.['min'] &&
+        (productForm.controls['price'].dirty || showPriceError ||
+        productForm.controls['price'].touched))){
+        <mat-hint class="text-red-500">قیمت باید عدد مثبت(بزرگتر از صفر) باشد</mat-hint>
+        }
+      </mat-form-field>
+    </div>
+    <div class="col-md-6 col-xs-12 mb-4">
+      <mat-form-field appearance="outline" class="w-full" dir="rtl">
+        <mat-label>نام</mat-label>
+        <input matInput formControlName="name" required />
+        @if(productForm.controls['name'].invalid &&
+        (productForm.controls['name'].errors?.['required'] &&
+        (productForm.controls['name'].dirty || showNameError ||
+        productForm.controls['name'].touched))){
+        <mat-hint class="text-red-500">نام را وارد کنید </mat-hint>
+        }
+      </mat-form-field>
+    </div>
+    <div class="col-xs-12 mb-4">
+      <mat-form-field appearance="outline" class="w-full" dir="rtl">
+        <mat-label>توضیحات</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="form-footer">
+    <button mat-raised-button color="success" type="submit">ثبت</button>
+  </div>
+</form>

@@ -1,0 +1,18 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #dadada;
+
+  h4 {
+    margin-bottom: 0 !important;
+    font-size: 20px !important;
+  }
+}
+
+.description {
+  width: 100%;
+  display: block;
+  margin-top: 20px;
+}

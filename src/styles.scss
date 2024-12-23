@@ -1,0 +1,29 @@
+@import "./assets/scss/reset.scss";
+@import "./assets/scss/grid.scss";
+@import "./assets/scss/fonts.scss";
+@import "./assets/scss/material-customize.scss";
+@import "./assets/scss/modal.scss";
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+  color-scheme: light dark;
+  transition: background-color 0.5s, color 0.5s;
+  -moz-font-feature-settings: "ss03";
+  -webkit-font-feature-settings: "ss03";
+  font-feature-settings: "ss03";
+  * {
+    -moz-font-feature-settings: "ss03";
+    -webkit-font-feature-settings: "ss03";
+    font-feature-settings: "ss03";
+  }
+}
+body {
+  margin: 0;
+  font-family: "iransans";
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
