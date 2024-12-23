@@ -1,5 +1,10 @@
 # توجه!
 
+user: user </br>
+password: user-password
+
+---
+
 میشه به جای چک کردن در guard ، توی APP_INITIALIZER هم چک کرد که کاربر وارد سیستم شده است یا خیر.چون با توجه به سناریو، لاگین بودن کاربر بر روی کل اپ تاثیر دارد.
 
 in main.ts:
@@ -31,11 +36,12 @@ export function appInitializerFactory(appInitializerService: AppInitializerServi
 then create a service in 'core/services' called 'AppInitializerService'
 
 ```typescript
+      .isLoggedIn()
 @Injectable({
   providedIn: "root",
 })
 export class AppInitializerService {
-  getAllApisSequentially() {
+  isLoggedIn() {
     let user = localStorage.getItem("user");
     return new Promise((resolve, reject) => {
       if (user) {
