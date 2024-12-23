@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  storageKey: 'products'
-}
+  storageKey: 'products',
+  user: 'user',
+};

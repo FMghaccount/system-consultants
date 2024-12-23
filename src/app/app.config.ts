@@ -21,9 +21,10 @@ export const appConfig: ApplicationConfig = {
   providers: [
     CurrencyPipe,
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes, withComponentInputBinding(), withViewTransitions()),
+    provideRouter(routes, withComponentInputBinding()),
     provideClientHydration(),
     provideAnimationsAsync(),
-    { provide: LOCALE_ID, useValue: 'fa-IR' }, provideAnimationsAsync(),
+    { provide: LOCALE_ID, useValue: 'fa-IR' },
+    provideAnimationsAsync(),
   ],
 };
