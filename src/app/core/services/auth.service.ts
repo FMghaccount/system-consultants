@@ -1,14 +1,11 @@
 import { isPlatformBrowser } from '@angular/common';
-import { inject, Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { environment } from '../../../environments/environment';
-import { LayoutService } from './layout.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private _layoutService: LayoutService = inject(LayoutService);
-
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   /**
@@ -33,9 +30,6 @@ export class AuthService {
   isLoggedIn() {
     if (isPlatformBrowser(this.platformId)) {
       let canShow = localStorage.getItem(environment.user) !== null;
-      if (canShow) {
-        this._layoutService.showLogout.next(true);
-      }
       return canShow;
     } else {
       return false;

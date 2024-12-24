@@ -38,7 +38,6 @@ export class PanelComponent {
    */
   logout() {
     localStorage.removeItem(environment.user);
-    this.layoutService.showLogout.next(false);
     this._router.navigate(['/login']);
   }
 }
