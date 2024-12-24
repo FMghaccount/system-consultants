@@ -79,7 +79,7 @@ export class ProductListComponent implements AfterViewInit {
    * @param {Product} product
    */
   showProductDetail(product: Product) {
-    this._router.navigate(['/details', product.id]);
+    this._router.navigate(['/panel/details', product.id]);
   }
 
   /**
@@ -89,7 +89,7 @@ export class ProductListComponent implements AfterViewInit {
    */
   editProduct(event: MouseEvent, product: Product) {
     event.stopPropagation();
-    this._router.navigate(['/edit', product.id]);
+    this._router.navigate(['/panel/edit', product.id]);
   }
 
   /**
@@ -125,6 +125,6 @@ export class ProductListComponent implements AfterViewInit {
    * navigate to create product page
    */
   addProduct() {
-    this._router.navigateByUrl('/create');
+    this._router.navigateByUrl('/panel/create');
   }
 }

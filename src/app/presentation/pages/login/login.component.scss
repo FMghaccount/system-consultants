@@ -6,6 +6,16 @@
   height: 65vh;
 }
 
+h2, h3{
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+h3{
+  padding-top: 50px;
+}
+
 form {
   display: flex;
   flex-direction: column;

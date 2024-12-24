@@ -5,12 +5,12 @@ import { LoginGuard } from './core/guards/login.guard';
 export const routes: Routes = [
   {
     path: '',
+    redirectTo: 'panel',
     pathMatch: 'full',
-    loadComponent: () =>
-      import('./presentation/pages/product-list/product-list.component').then(
-        (component) => component.ProductListComponent
-      ),
-    canActivate: [AuthGuard],
+  },
+  {
+    path        : 'panel',
+    loadChildren: () => import('./panel.routes').then(m => m.routes),
   },
   {
     path: 'login',
@@ -19,30 +19,6 @@ export const routes: Routes = [
         (component) => component.LoginComponent
       ),
     canActivate: [LoginGuard],
-  },
-  {
-    path: 'create',
-    loadComponent: () =>
-      import(
-        './presentation/pages/product-create/product-create.component'
-      ).then((component) => component.ProductCreateComponent),
-    canActivate: [AuthGuard],
-  },
-  {
-    path: 'edit/:id',
-    loadComponent: () =>
-      import('./presentation/pages/product-edit/product-edit.component').then(
-        (component) => component.ProductEditComponent
-      ),
-    canActivate: [AuthGuard],
-  },
-  {
-    path: 'details/:id',
-    loadComponent: () =>
-      import(
-        './presentation/pages/product-details/product-details.component'
-      ).then((component) => component.ProductDetailsComponent),
-    canActivate: [AuthGuard],
   },
   {
     path: '**',

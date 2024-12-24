@@ -1,37 +1,3 @@
-@if((layoutService.showApp | async) === false){
-<div class="loading-wrapper">
-  <span class="loading-text">در حال بارگذاری ...</span>
+<div class="main-wrapper">
+  <router-outlet></router-outlet>
 </div>
-} @else {
-  <mat-drawer-container [hasBackdrop]="true" [dir]="'rtl'">
-    <mat-drawer #drawer [mode]="'over'">
-      <div class="menu-header">
-        <button mat-icon-button aria-label="menu icon" (click)="drawer.toggle()">
-          <mat-icon>arrow_forward</mat-icon>
-        </button>
-      </div>
-      <ul class="menu">
-        @for (item of menuItems; track item.id) {
-        <li matRipple class="menu-item" [routerLink]="[item.path]" routerLinkActive="active-item"
-          [routerLinkActiveOptions]="{ exact: true }">
-          <mat-icon>{{ item.icon }}</mat-icon>
-          <span>{{ item.text }}</span>
-        </li>
-        }
-      </ul>
-    </mat-drawer>
-    <mat-drawer-content>
-      <mat-toolbar>
-        <button mat-icon-button aria-label="menu icon" (click)="drawer.toggle()">
-          <mat-icon>menu</mat-icon>
-        </button>
-        @if(layoutService.showLogout | async){
-        <button mat-raised-button color="error" (click)="logout()">خروج</button>
-        }
-      </mat-toolbar>
-      <div class="main-wrapper">
-        <router-outlet></router-outlet>
-      </div>
-      </mat-drawer-content>
-      </mat-drawer-container>
-}
