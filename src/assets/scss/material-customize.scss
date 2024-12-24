@@ -145,3 +145,9 @@ html {
 .mat-mdc-paginator-range-label{
   width: max-content;
 }
+
+mat-card{
+  width: max-content;
+  max-width: 90%;
+  margin: auto;
+}

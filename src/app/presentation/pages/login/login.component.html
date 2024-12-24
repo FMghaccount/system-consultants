@@ -1,16 +1,19 @@
-<h3>لطفا فایل Readme.md مطالعه شود</h3>
-
-<div class="login-container">
-  <h2>ورود</h2>
-  <form (ngSubmit)="login()">
-    <mat-form-field appearance="outline" [dir]="'rtl'">
-      <mat-label>نام کاربری</mat-label>
-      <input matInput [(ngModel)]="username" name="username" required>
-    </mat-form-field>
-    <mat-form-field appearance="outline" [dir]="'rtl'">
-      <mat-label>رمز عبور</mat-label>
-      <input matInput [(ngModel)]="password" name="password" type="password" required>
-    </mat-form-field>
-    <button mat-raised-button type="submit" color="info">ورود</button>
-  </form>
-</div>
+<mat-card class="example-card" appearance="outlined">
+  <mat-card-content>
+    <h4>لطفا فایل Readme.md مطالعه شود</h4>
+    <div class="login-container">
+      <h2>ورود</h2>
+      <form (ngSubmit)="login()">
+        <mat-form-field appearance="outline" [dir]="'rtl'">
+          <mat-label>نام کاربری</mat-label>
+          <input matInput [(ngModel)]="username" name="username" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline" [dir]="'rtl'">
+          <mat-label>رمز عبور</mat-label>
+          <input matInput [(ngModel)]="password" name="password" type="password" required>
+        </mat-form-field>
+        <button mat-raised-button type="submit" color="info">ورود</button>
+      </form>
+    </div>
+  </mat-card-content>
+  </mat-card>
